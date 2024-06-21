@@ -10,22 +10,9 @@ struct Point {
 
 func contains_origin{range_check_ptr : felt}(len_points : felt, points : Point*) -> felt {
     // FILL ME
-    if (len_points == 0) {
-        return 0;
-    }
-
-    let point = points[0];
-    tempvar not_x = is_not_zero(point.x);
-    tempvar not_y = is_not_zero(point.y);
-    tempvar not_z = is_not_zero(point.z);
-
-    let not_origin = not_x + not_y + not_z;
-    if (not_origin == 0) {
-        return 1;
-    }
-    return contains_origin(len_points - 1, points + Point.SIZE);
 }
 
+// TESTS
 from starkware.cairo.common.alloc import alloc
 
 func test_contains_origin{range_check_ptr : felt}() {

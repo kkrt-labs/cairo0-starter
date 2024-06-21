@@ -14,12 +14,12 @@ func parent_function{a, b}() -> felt{
     return intermediate_result_1 + intermediate_result_2;
 }
 
-func child_function_1{a}() -> felt{
+func child_function_1() -> felt{
     // Do not change the function body
     return 2 * a;
 }
 
-func child_function_2{b}() -> felt{
+func child_function_2() -> felt{
     // Do not change the function body
     return b + 3;
 }

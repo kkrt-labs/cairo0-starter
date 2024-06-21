@@ -14,9 +14,6 @@ func crash(){
     // [ap - 1] = 42
     // [ap - 1] = 21
 
-    tempvar value = 42;
-    assert value = 42;
-    assert value = 21;
     return();
 }
 
@@ -25,7 +22,6 @@ func crash(){
 func assert_42(number : felt){
     // assert number = 42;
 
-    assert [fp-3] = 42;
     return();
 }
 
@@ -35,7 +31,6 @@ func assert_42(number : felt){
 // else, if the value is initialized and different from 42, crash
 // else, do nothing and return
 func assert_pointer_42(p_number : felt*){
-    assert [p_number] = 42;
     return();
 }
 
@@ -44,20 +39,12 @@ func assert_pointer_42(p_number : felt*){
 // if the memory cell pointed by `p_number` is set to 42, do nothing and return
 // else crash
 func assert_pointer_42_no_set(p_number : felt*){
-    assert 42 = [p_number];
     return();
 }
 
 // TESTS
 
 from starkware.cairo.common.alloc import alloc
-
-func test_crash(){
-    %{ expect_revert() %}
-    crash();
-
-    return();
-}
 
 func test_assert_42(){
     alloc_locals;

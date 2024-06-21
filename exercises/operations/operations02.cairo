@@ -12,7 +12,6 @@ from starkware.cairo.common.math import assert_lt_felt, assert_not_zero
 // Find a number X which satisfy A / X > A with X in range ]0 ; 100]
 func solve(a : felt) -> felt{
     // TO FILL
-    let x = 53;
     return x;
 }
 

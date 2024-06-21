@@ -11,9 +11,6 @@
 func basic_hint() -> felt{
     alloc_locals;
     local res;
-    %{
-        ids.res = 42;
-    %}
     // TODO: Insert hint here
     return res;
 }

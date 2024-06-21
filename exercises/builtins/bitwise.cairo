@@ -27,9 +27,6 @@ func get_nth_bit{range_check_ptr, bitwise_ptr: BitwiseBuiltin*}() -> felt {
         ids.n = program_input["n"]
     %}
     // FILL ME
-    let (pow2n) = pow(2, n);
-    let (and_val) = bitwise_and(value, pow2n);
-    let res = is_not_zero(and_val);
     return res;
 }
 
@@ -44,8 +41,6 @@ func set_nth_bit{bitwise_ptr : BitwiseBuiltin*, range_check_ptr : felt}() -> fel
         ids.n = program_input["n"]
     %}
     // FILL ME
-    let (pow2n) = pow(2, n);
-    let (res) = bitwise_or(value, pow2n);
     return res;
 }
 
@@ -60,8 +55,6 @@ func toggle_nth_bit{bitwise_ptr : BitwiseBuiltin*, range_check_ptr : felt}() -> 
         ids.n = program_input["n"]
     %}
     // FILL ME
-   let (pow2n) = pow(2, n);
-   let (res) = bitwise_xor(value, pow2n);
     return res;
 }
 
@@ -89,35 +82,13 @@ func op_nth_bit{bitwise_ptr : BitwiseBuiltin*, range_check_ptr : felt}() -> felt
         ids.n = program_input["n"]
     %}
 
-    // Assert op is correct
-    assert 0 = (op - 'get') * (op - 'set') * (op - 'toggle');
+     // Assert op is correct
 
     with_attr error_message("Bad bitwise bounds"){
         // Assert n is within bounds
-           assert_nn(n);
-           assert_le(n, 250);
     }
 
     // Compute the operation
     // Don't forget to advance bitwise_ptr
-    let (pow2n) = pow(2, n);
-    assert bitwise_ptr.x = value;
-    assert bitwise_ptr.y = pow2n;
-
-    local res;
-    if (op == 'get'){
-        let tmp = is_not_zero(bitwise_ptr.x_and_y);
-        assert res = tmp;
-    }else{
-        if (op == 'set'){
-            assert res = bitwise_ptr.x_or_y;
-        }else{
-            // op == 'toggle'
-            assert res = bitwise_ptr.x_xor_y;
-        }
-    }
-
-    let bitwise_ptr = bitwise_ptr + BitwiseBuiltin.SIZE;
-
     return res;
 }

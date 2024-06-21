@@ -11,22 +11,24 @@ from starkware.cairo.common.bool import TRUE, FALSE
 // TODO: Implement a ternary operator `if cond then return val_true else return val_false`
 // Make sure the condition is a boolean
 
-func if_then_else(cond : felt, val_true : felt, val_false) -> (res : felt){
+func if_then_else(cond: felt, val_true: felt, val_false) -> felt {
     // FILL ME
-    return (res);
+    return res;
 }
 
-@external
-func test_ternary_conditional_operator(){
-    let (res) = if_then_else(FALSE, 911, 420);
+func test_ternary_conditional_operator() {
+    let res = if_then_else(FALSE, 911, 420);
     assert 420 = res;
-    let (res) = if_then_else(TRUE, 911, 'over 9000');
+    let res = if_then_else(TRUE, 911, 'over 9000');
     assert 911 = res;
-    let (res) = if_then_else(FALSE, 69420, 1559);
+    let res = if_then_else(FALSE, 69420, 1559);
     assert 1559 = res;
-    let (res) = if_then_else(TRUE, 'nice', 69);
-    assert 'nice' = res
-    %{ expect_revert() %}
-    let (res) = if_then_else(69, 'nope', 911);
-    return();
+    let res = if_then_else(TRUE, 'nice', 69);
+    assert 'nice' = res;
+    return ();
+}
+
+func test_ternary_conditional_operator_ko() {
+    let res = if_then_else(69, 'nope', 911);
+    return ();
 }

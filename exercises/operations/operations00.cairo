@@ -12,6 +12,5 @@ func poly() -> felt{
         ids.x = program_input["x"];
     %}
     // FILL ME
-    let res = (x * x + x - 2) / (x - 2);
     return res;  // Do not change
 }

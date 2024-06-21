@@ -8,7 +8,7 @@
 // TODO: Compute the result of "x modulo n" inside a hint using python's `divmod`
 // Don't forget to make sure the result is correct.
 
-func modulo() -> felt{
+func modulo() -> felt {
     alloc_locals;
     local x;
     local n;
@@ -20,17 +20,10 @@ func modulo() -> felt{
     local quotient;
     local remainder;
     %{
-        # TODO: Compute the quotient and remainder inside the hint
-        #print(ids.quotient)
-        #print(ids.remainder)
+        // TODO: Compute the quotient and remainder inside the hint
+        print(ids.quotient)
+        print(ids.remainder)
     %}
-
-    %{
-        q, r = divmod(ids.x, ids.n)
-        ids.quotient = q
-        ids.remainder = r
-    %}
-    assert x = quotient * n + remainder;
     // TODO: verify the result is correct
 
     return remainder;

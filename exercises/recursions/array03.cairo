@@ -2,44 +2,50 @@
 from starkware.cairo.common.math_cmp import is_le
 from starkware.cairo.common.alloc import alloc
 
-func is_increasing{range_check_ptr : felt}(array_len : felt, array : felt*) -> felt{
-    if (array_len == 0){
+// TODO
+// Scan through the array elements from first to last
+// Return 1 if elements of the array are in increasing order.
+// Return 0 otherwise
+func is_increasing{range_check_ptr: felt}(array_len: felt, array: felt*) -> felt {
+    if (array_len == 0) {
         return 1;
     }
-    if (array_len == 1){
+    if (array_len == 1) {
         return 1;
     }
-    let curr_value = [array];
-    let next_value = [array + 1];
+    let curr_value = 0;
+    let next_value = 0;
+
+    // Do not modify these lines
     let is_sorted = is_le(curr_value, next_value);
-    if (is_sorted == 1){
+    if (is_sorted == 1) {
         return is_increasing(array_len - 1, array + 1);
     }
     return 0;
 }
 
-func is_decreasing{range_check_ptr : felt}(array_len : felt, array : felt*) -> felt{
-    if (array_len == 0){
-        return 1;
-    }
-    if (array_len == 1){
-        return 1;
-    }
-    let curr_value = [array + array_len - 1];
-    let next_value = [array + array_len - 2];
-    let is_sorted = is_le(curr_value, next_value);
-    if (is_sorted == 1){
-        return is_decreasing(array_len - 1, array);
+// TODO
+// Scan through the array elements from last to first
+// Return 1 if elements of the array are in decreasing order.
+// Return 0 otherwise
+func is_decreasing{range_check_ptr: felt}(array_len: felt, array: felt*) -> felt {
+    // FILL ME
+
+    // Do not modify this line
+    let (is_sorted) = is_le(curr_value, next_value);
+
+    if (is_sorted == 1) {
+        return is_decreasing(array, array_len);
     }
     return 0;
 }
 
-func reverse(array_len : felt, array : felt*, rev_array : felt*){
-    if (array_len == 0){
-        return ();
-    }
-    assert [rev_array] = [array + array_len - 1];
-    return reverse(array_len - 1, array, rev_array + 1);
+// TODO
+// Use recursion to reverse array in rev_array
+// Assume rev_array is already allocated
+func reverse(array_len: felt, array: felt*, rev_array: felt*) {
+    // FILL ME
+    return ();
 }
 
 func test__is_increasing{range_check_ptr}() -> felt {

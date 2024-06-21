@@ -9,15 +9,7 @@
 from starkware.cairo.common.alloc import alloc
 
 func contains(needle : felt, haystack_len : felt, haystack : felt*) -> felt{
-    if (haystack_len == 0) {
-        return 0;
-    }
-
-    if (needle == [haystack]) {
-        return 1;
-    }
-
-    return contains(needle, haystack_len - 1, haystack + 1);
+    return 0;
 }
 
 func test__contains() -> felt{

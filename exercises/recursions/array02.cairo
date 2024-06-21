@@ -9,17 +9,18 @@
 
 from starkware.cairo.common.alloc import alloc
 
-func square(array_len : felt, array : felt*, new_array_len : felt, new_array : felt*){
+func square(array_len : felt, array : felt*){
     if (array_len == 0){
         return();
     }
 
     let squared_item = array[0] * array[0];
-    assert [new_array] = squared_item;
+    assert [array] = squared_item;
 
-    return square(array_len - 1, array + 1, new_array_len + 1, new_array + 1);
+    return square(array_len - 1, array + 1);
 }
 
+// You can update the test if the function signature changes.
 func test__square() -> felt* {
     alloc_locals;
     local array_len;
@@ -30,7 +31,7 @@ func test__square() -> felt* {
         segments.write_arg(ids.array, program_input["array"])
     %}
     let (new_array) = alloc();
-    square(array_len, array, 0, new_array);
+    square(array_len, array);
 
     return new_array;
 }

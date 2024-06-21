@@ -10,7 +10,6 @@
 // Write this function body in a high level syntax
 func poly_high_level(x: felt) -> felt {
     // return x³ + 23x² + 45x + 67 according to x
-    let res = 1;
     return res;  // Do not change
 }
 
@@ -34,6 +33,6 @@ func test_poly_high_level() -> felt {
     alloc_locals;
     local x;
     %{ ids.x = program_input["x"] %}
-    let (res) = poly_high_level(x=x);
+    let res = poly_high_level(x=x);
     return res;
 }

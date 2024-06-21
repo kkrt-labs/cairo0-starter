@@ -7,6 +7,6 @@
 
 // You can ignore what follows for now
 @external
-func test_ok(){
-    return();
+func test_ok() {
+    return ();
 }

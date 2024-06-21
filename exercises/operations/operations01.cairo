@@ -9,7 +9,6 @@
 // Compute a number X which verify X + 1 < X using unsigned int
 func test__felt(){
     // FILL ME
-    let x = 0 - 1;
     let z = x + 1;
     %{ assert ids.z < ids.x, f'assert failed: {ids.z} >= {ids.x}' %}
     return();

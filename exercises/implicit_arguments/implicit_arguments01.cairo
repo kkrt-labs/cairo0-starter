@@ -5,12 +5,7 @@
 
 // TODO: fix the "implicit_sum" signature to make the test pass
 
-func implicit_sum{a:felt, b:felt}() -> felt{
-    %{
-        ids.a = program_input["a"]
-        ids.b = program_input["b"]
-    %}
-
+func implicit_sum() -> felt{
     return a + b;
 }
 

@@ -13,17 +13,16 @@ func assert_is_42(){
     %{
         ids.n = program_input["n"]
     %}
+    // REWRITE ME
     // [ap - 3] = 42
     // ret
-    assert n = 42;
-    return();
 }
 
 // TODO
 // Rewrite this function with a low level syntax, using registers
 func sum(a : felt, b : felt) -> felt{
+    // REWRITE ME
     // return (a + b)
-    return [fp -3] + [fp -4];
 }
 
 func test_sum() -> felt {
