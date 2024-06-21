@@ -4,6 +4,12 @@ A set of exercises forked from [Starklings](https://github.com/onlydustxyz/stark
 
 ## Installation
 
+The project uses python 3.10. The recommended way to install it if you don't have it yet is to use [pyenv](https://github.com/pyenv/pyenv).
+
+```bash
+pyenv install 3.10
+```
+
 Install the required dependencies by running the following command:
 
 ```bash
@@ -20,11 +26,11 @@ that verifies the correctness of the implementation.
 To test your implementation of an exercise, run the following command:
 
 ```bash
-pytest path/to/exercise.py
+poetry run pytest path/to/exercise.py
 ```
 
 To test all exercises, run the following command:
 
 ```bash
-pytest exercises
+poetry run pytest exercises
 ```
