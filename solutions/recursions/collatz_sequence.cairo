@@ -33,7 +33,7 @@ func collatz{bitwise_ptr: BitwiseBuiltin*}(seed: felt, step: felt) -> felt {
 }
 
 // Do not change the test
-func test_collatz{syscall_ptr: felt*, bitwise_ptr: BitwiseBuiltin*}() {
+func test_collatz{bitwise_ptr: BitwiseBuiltin*}() {
     let n = collatz(seed=42, step=0);
     assert n = 42;
     let n = collatz(seed=42, step=1);

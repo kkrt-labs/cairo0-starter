@@ -1,11 +1,48 @@
+from itertools import accumulate
+from typing import List, Tuple
+
 from starkware.cairo.lang.compiler.ast.cairo_types import (
+    CairoType,
     TypeFelt,
     TypePointer,
     TypeStruct,
     TypeTuple,
 )
-from starkware.cairo.lang.compiler.identifier_definition import StructDefinition
-from starkware.cairo.lang.compiler.identifier_manager import MissingIdentifierError
+from starkware.cairo.lang.compiler.identifier_definition import (
+    AliasDefinition,
+    StructDefinition,
+    TypeDefinition,
+)
+from starkware.cairo.lang.compiler.identifier_manager import (
+    IdentifierManager,
+    MissingIdentifierError,
+)
+from starkware.cairo.lang.compiler.scoped_name import ScopedName
+
+
+def get_struct_definition(
+    program_identifiers: IdentifierManager, path: Tuple[str, ...]
+) -> StructDefinition:
+    """
+    Resolves and returns the struct definition for a given path in the Cairo program.
+    If the path is an alias (`import T from ...`), it resolves the alias to the actual struct definition.
+    If the path is a type definition `using T = V`, it resolves the type definition to the actual struct definition.
+    Otherwise, it returns the struct definition directly.
+    """
+    scope = ScopedName(path)
+    identifier = program_identifiers.as_dict()[scope]
+    if isinstance(identifier, StructDefinition):
+        return identifier
+    if isinstance(identifier, TypeDefinition) and isinstance(
+        identifier.cairo_type, TypeStruct
+    ):
+        return get_struct_definition(
+            program_identifiers, identifier.cairo_type.scope.path
+        )
+    if isinstance(identifier, AliasDefinition):
+        destination = identifier.destination.path
+        return get_struct_definition(program_identifiers, destination)
+    raise ValueError(f"Expected a struct named {path}, found {identifier}")
 
 
 class Serde:
@@ -146,3 +183,28 @@ class Serde:
             except (ValueError, AttributeError):
                 shift = 1
         return self._serialize(cairo_type, self.runner.vm.run_context.ap - shift, shift)
+
+    def get_offset(self, cairo_type):
+        if hasattr(cairo_type, "members"):
+            return len(cairo_type.members)
+        else:
+            try:
+                identifier = get_struct_definition(
+                    self.program_identifiers, cairo_type.scope.path
+                )
+                return len(identifier.members)
+            except (ValueError, AttributeError):
+                return 1
+
+    def get_offsets(self, cairo_types: List[CairoType]):
+        """Given a list of Cairo types, return the cumulative offset for each type."""
+        offsets = [self.get_offset(t) for t in reversed(cairo_types)]
+        return list(reversed(list(accumulate(offsets))))
+
+    @staticmethod
+    def filter_no_error_flag(output):
+        return [x for x in output if x is not NO_ERROR_FLAG]
+
+
+# Sentinel object for indicating no error in exception handling
+NO_ERROR_FLAG = object()

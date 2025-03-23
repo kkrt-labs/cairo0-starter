@@ -30,7 +30,7 @@ func decode_cipher2() -> felt {
 }
 
 // Do not change the test
-func test_decode_string{syscall_ptr: felt*}() {
+func test_decode_string() {
     // The correct key should produce the corresponding plaintext
     let decoded_string = decode_cipher1();
     assert decoded_string = 'Twinkle Twinkle Little Star';

@@ -44,7 +44,7 @@ func is_cool(x: felt) -> felt {
 }
 
 // Do not change the test
-func test_is_binary{syscall_ptr: felt*}() {
+func test_is_binary() {
     let eval_if = is_binary_if(0);
     let eval_no_if = is_binary_no_if(0);
     assert (eval_if, eval_no_if) = (1, 1);
@@ -59,7 +59,7 @@ func test_is_binary{syscall_ptr: felt*}() {
     return ();
 }
 
-func test_is_cool{syscall_ptr: felt*}() {
+func test_is_cool() {
     let is_1337_cool = is_cool(1337);
     let is_69420_cool = is_cool(69420);
     let is_42_cool = is_cool(42);

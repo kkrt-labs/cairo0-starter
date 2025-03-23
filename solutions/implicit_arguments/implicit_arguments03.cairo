@@ -9,7 +9,7 @@
 // Do not change the function signature!
 func black_box{secret : felt}(){
     // Make the magic happen here :)
-    tempvar secret = 'very secret!';
+    let secret = 'very secret!';
     return();
 }
 

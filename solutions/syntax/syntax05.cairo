@@ -10,7 +10,7 @@ struct Currency{
 }
 
 // Do not change the test
-func test_currency_sum{syscall_ptr : felt*}(){
+func test_currency_sum(){
     alloc_locals;
     local euro : Currency = Currency('Euro', 2);
     assert euro.name = 'Euro';

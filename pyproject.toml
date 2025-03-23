@@ -1,29 +1,34 @@
-[tool.poetry]
+[project]
 name = "cairo0-starter"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+requires-python = ">=3.10,<3.11"
 readme = "README.md"
-packages = [{ include = "utils" }]
+dependencies = [
+  "starknet-py>=0.20.0,<0.21",
+  "cairo-lang>=0.13.2",
+  "pytest>=8.1.1,<9",
+  "pytest-asyncio~=0.21.0",
+  "toml>=0.10.2,<0.11",
+  "pandas>=1.5.1,<2",
+  "black>=22.10.0,<23",
+  "isort>=5.10.1,<6",
+  "pytest-xdist[psutil]>=3.0.2,<4",
+  "setuptools>=68.2.0,<69",
+  "pyperclip>=1.8.2,<2",
+  "tabulate>=0.9.0,<0.10",
+  "pytest-env>=1.1.3,<2",
+  "ipykernel>=6.29.4,<7",
+  "polars>=1.26.0",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<3.11"
-starknet-py = "^0.20.0"
-cairo-lang = "0.13.1"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-pytest-asyncio = "~0.21.0"
-toml = "^0.10.2"
-pandas = "^1.5.1"
-black = "^22.10.0"
-isort = "^5.10.1"
-pytest-xdist = { version = "^3.0.2", extras = ["psutil"] }
-setuptools = "^68.2.0"
-pyperclip = "^1.8.2"
-tabulate = "^0.9.0"
-pytest-env = "^1.1.3"
-ipykernel = "^6.29.4"
+[tool.hatch.build.targets.wheel]
+packages = ["./"]
+
 
 [tool.pytest.ini_options]
 filterwarnings = [
@@ -32,6 +37,7 @@ filterwarnings = [
   "ignore:abi:DeprecationWarning",                                                        # from web3
   "ignore::marshmallow.warnings.RemovedInMarshmallow4Warning",                            # from marshmallow
 ]
+
 pythonpath = ["."]
 python_files = "*.py"
 
@@ -40,6 +46,7 @@ env = [
   "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION = python",
   "PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT = 3",
 ]
+
 
 [tool.isort]
 profile = "black"
@@ -57,7 +64,3 @@ check-hidden = ''
 
 [tool.bandit]
 exclude_dirs = ["tests"]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"

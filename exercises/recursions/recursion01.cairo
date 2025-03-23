@@ -13,7 +13,7 @@ func fibonacci(n: felt) -> felt {
 }
 
 // Do not change the test
-func test_fibonacci{syscall_ptr: felt*}() {
+func test_fibonacci() {
     let n = fibonacci(0);
     assert n = 0;
     let n = fibonacci(1);

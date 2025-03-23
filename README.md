@@ -4,16 +4,12 @@ A set of exercises forked from [Starklings](https://github.com/onlydustxyz/stark
 
 ## Installation
 
-The project uses python 3.10. The recommended way to install it if you don't have it yet is to use [pyenv](https://github.com/pyenv/pyenv).
+The project uses python 3.10. The recommended way to install it if you don't have it yet is to use [uv](https://docs.astral.sh/uv/getting-started/installation/).
+
+Once installed, install the required dependencies by running the following command:
 
 ```bash
-pyenv install 3.10
-```
-
-Install the required dependencies by running the following command:
-
-```bash
-poetry install
+uv sync
 ```
 
 ## Exercises
@@ -26,11 +22,17 @@ that verifies the correctness of the implementation.
 To test your implementation of an exercise, run the following command:
 
 ```bash
-poetry run pytest path/to/exercise.py
+uv run pytest path/to/exercise.py
 ```
 
 To test all exercises, run the following command:
 
 ```bash
-poetry run pytest exercises
+uv run pytest exercises
 ```
+
+## References
+
+- [Starklings](https://github.com/onlydustxyz/starklings)
+- [Cairo0 Documentation](https://www.cairo-lang.org/docs/hello_cairo.html)
+- [Cairo Whitepaper](https://eprint.iacr.org/2021/1063.pdf)
