@@ -59,7 +59,7 @@ After installing the extensions, follow these steps to set up your environment:
    ```bash
    uv sync
    ```
-3. Activate the local Python virtual environment:
+3. Activate the local Python virtual environment (required for `cairo-compile` to be available in locally):
    ```bash
    source ./.venv/bin/activate
    ```
