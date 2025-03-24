@@ -40,7 +40,7 @@ uv run pytest exercises
 
 ## LSP & IDE Setup
 
-To enhance your development experience in Cursor or VSCode, we recommend installing the following extensions:
+To enhance your development experience in VSCode, we recommend installing the following extensions:
 
 - **[Cairo by StarkWare Industries](https://marketplace.cursorapi.com/items?itemName=Starkware.cairo)** (ensure it’s the first version, not the new Cairo 1.0)
 - **[Cairo Language Support for StarkNet by Eric Lau](https://marketplace.cursorapi.com/items?itemName=ericglau.cairo-ls)**
