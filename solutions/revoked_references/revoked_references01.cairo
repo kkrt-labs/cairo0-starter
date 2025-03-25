@@ -4,7 +4,7 @@
 
 // TODO: complete the bar function to make the test pass
 // You will encounter a "revoked reference" error
-// https://www.cairo-lang.org/docs/how_cairo_works/consts.html#revoked-references
+// https://docs.cairo-lang.org/cairozero/how_cairo_works/consts.html#revoked-references
 
 from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.hash import hash2

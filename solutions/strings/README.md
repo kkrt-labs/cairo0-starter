@@ -11,6 +11,6 @@ let s = 0x48656c6c6f
 let s = 310939249775
 ```
 
-Read more about short strings here https://www.cairo-lang.org/docs/how_cairo_works/consts.html#short-string-literals.
+Read more about short strings here https://docs.cairo-lang.org/cairozero/how_cairo_works/consts.html#short-string-literals.
 
 Strings of arbitrary size can be constructed from short strings, an example implementation can be found here https://github.com/topology-gg/caistring

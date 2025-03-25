@@ -1,7 +1,7 @@
 
 
 // Felts are integers defined in the range [0 ; P[, all compuations are done modulo P.
-// Exercice resources: https://docs.cairo-lang.org/hello_cairo/intro.html#the-primitive-type-field-element-felt
+// Exercice resources: https://docs.cairo-lang.org/cairozero/hello_cairo/intro.html#the-primitive-type-field-element-felt
 
 // I AM NOT DONE
 

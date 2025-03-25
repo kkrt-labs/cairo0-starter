@@ -3,7 +3,7 @@
 // e.g. let hello_string = 'Hello';
 //      let hello_felt = 310939249775;
 //      let hello_hex = 0x48656c6c6f;
-// https://www.cairo-lang.org/docs/how_cairo_works/consts.html#short-string-literals
+// https://docs.cairo-lang.org/cairozero/how_cairo_works/consts.html#short-string-literals
 
 // I AM NOT DONE
 

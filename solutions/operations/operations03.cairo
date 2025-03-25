@@ -4,7 +4,7 @@ from starkware.cairo.common.math import assert_lt_felt
 
 // Felts use prime number property to ensure (x / y) * y = x is always true.
 // It is still possible to manage negative numbers thanks to field element properties.
-// Exercice resources: https://docs.cairo-lang.org/hello_cairo/intro.html#the-primitive-type-field-element-felt
+// Exercice resources: https://docs.cairo-lang.org/cairozero/hello_cairo/intro.html#the-primitive-type-field-element-felt
 
 // I AM NOT DONE
 

@@ -15,5 +15,5 @@ Example of builtins include:
   - ec_op: computes elliptic curve operation on the Stark curve (EcOpBuiltin*)
 
 ## Resources:
-- https://www.cairo-lang.org/docs/how_cairo_works/builtins.html
+- https://docs.cairo-lang.org/cairozero/how_cairo_works/builtins.html
 - https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/cairo_builtins.cairo

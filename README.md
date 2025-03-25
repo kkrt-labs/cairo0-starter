@@ -34,7 +34,7 @@ uv run pytest exercises
 ## References
 
 - [Starklings](https://github.com/onlydustxyz/starklings)
-- [Cairo0 Documentation](https://www.cairo-lang.org/docs/hello_cairo.html)
+- [Cairo0 Documentation](https://docs.cairo-lang.org/cairozero/hello_cairo/index.html)
 - [Cairo Whitepaper](https://eprint.iacr.org/2021/1063.pdf)
 
 
@@ -68,5 +68,3 @@ After installing the extensions, follow these steps to set up your environment:
    code .    # For VSCode
    cursor .  # For Cursor
    ```
-
-

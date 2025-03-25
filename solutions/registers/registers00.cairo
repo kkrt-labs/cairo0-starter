@@ -3,8 +3,8 @@
 // I AM NOT DONE
 
 // Ressources
-// https://www.cairo-lang.org/docs/how_cairo_works/cairo_intro.html#registers
-// https://www.cairo-lang.org/docs/how_cairo_works/functions.html#function-arguments-and-return-values
+// https://docs.cairo-lang.org/cairozero/how_cairo_works/cairo_intro.html#registers
+// https://docs.cairo-lang.org/cairozero/how_cairo_works/functions.html#function-arguments-and-return-values
 
 // TODO
 // Rewrite this function body in a high level syntax

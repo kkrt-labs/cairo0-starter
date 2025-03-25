@@ -2,7 +2,7 @@
 
 // Felts supports basic math operations.
 // High level syntax allows one-line multiple operations while low level syntax doesn't.
-// Exercice source: https://www.cairo-lang.org/docs/how_cairo_works/cairo_intro.html#field-elements
+// Exercice source: https://docs.cairo-lang.org/cairozero/how_cairo_works/cairo_intro.html#field-elements
 
 // I AM NOT DONE
 

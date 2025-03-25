@@ -3,7 +3,7 @@
 // I AM NOT DONE
 
 // Resource
-// https://www.cairo-lang.org/docs/how_cairo_works/functions.html#function-arguments-and-return-values
+// https://docs.cairo-lang.org/cairozero/how_cairo_works/functions.html#function-arguments-and-return-values
 
 // TODO
 // Rewrite this function with a high level syntax
