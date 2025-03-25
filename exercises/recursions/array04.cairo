@@ -1,4 +1,3 @@
-%lang starknet
 
 from starkware.cairo.common.math_cmp import is_not_zero
 

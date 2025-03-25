@@ -1,4 +1,3 @@
-%lang starknet
 
 // Boolean assertions, such as "x OR y" for boolean felts, can also be implemented without conditionals.
 

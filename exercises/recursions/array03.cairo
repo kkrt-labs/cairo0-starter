@@ -1,4 +1,3 @@
-%lang starknet
 from starkware.cairo.common.math_cmp import is_le
 from starkware.cairo.common.alloc import alloc
 

@@ -1,4 +1,3 @@
-%lang starknet
 
 // I AM NOT DONE
 
