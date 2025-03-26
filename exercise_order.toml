@@ -5,6 +5,7 @@ order = [
   "syntax/syntax03",
   "syntax/syntax04",
   "syntax/syntax05",
+  "operations/operations00",
   "operations/operations01",
   "operations/operations02",
   "operations/operations03",

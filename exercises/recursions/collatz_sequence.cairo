@@ -1,4 +1,3 @@
-%lang starknet
 %builtins bitwise
 
 from starkware.cairo.common.bitwise import bitwise_and
